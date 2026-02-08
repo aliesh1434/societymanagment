@@ -1,0 +1,293 @@
+body {
+    background-image: url('SDSBG.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+        padding-top: 90px; /* Extra space for desktop fixed navbar */
+
+}
+
+
+.navbar-brand img {
+    height: 40px;
+}
+
+.nav-link:hover {
+            font-weight: bold;
+            color: #ffc107 !important;
+        }
+
+.card {
+    background-color: rgba(255, 255, 255, 0.95);
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    width: 100%;
+    max-width: 750px;
+    margin: 40px auto;
+}
+
+  th i {
+        margin-right: 4px;
+    }
+
+.form-label {
+    font-weight: bold;
+}
+
+.btn {
+    padding: 10px;
+    font-size: 1rem;
+}
+
+@media (max-width: 768px) {
+  .card {
+    padding: 15px !important;
+  }
+  .form-label {
+    font-size: 0.9rem;
+  }
+  h2, h3 {
+    font-size: 1.3rem;
+  }
+}
+h2, h3 {
+    color: #333;
+    text-align: center;
+}
+
+@media (max-width: 400px) {
+    h2 {
+        font-size: 1.3rem;
+    }
+
+    .form-control {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+
+    .btn {
+        font-size: 0.9rem;
+        padding: 8px;
+    }
+}
+.checkmark-circle {
+    width: 32px;
+    height: 32px;
+    position: relative;
+    display: inline-block;
+}
+.checkmark-circle .background {
+    width: 100%;
+    height: 100%;
+    background-color: #ffffff50;
+    border-radius: 50%;
+    position: absolute;
+}
+.checkmark {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    display: block;
+    box-sizing: border-box;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    transform: rotate(45deg);
+    position: absolute;
+    top: 6px;
+    left: 11px;
+    width: 8px;
+    height: 16px;
+    animation: checkmark 0.4s ease-out forwards;
+}
+@keyframes checkmark {
+    0% {
+        opacity: 0;
+        transform: scale(0.2) rotate(45deg);
+    }
+    80% {
+        opacity: 1;
+        transform: scale(1.1) rotate(45deg);
+    }
+    100% {
+        transform: scale(1) rotate(45deg);
+    }
+}
+.tick-circle,
+.tick-check {
+  fill: none;
+  stroke: #28a745;
+  stroke-width: 4;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  animation: dash 0.6s forwards ease-in-out;
+}
+
+
+/* Error version (optional) */
+.tick-circle.error,
+.tick-check.error {
+  stroke: red;
+}
+
+/* Message Feedback Styles */
+        .login-feedback {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: rgba(255, 255, 255, 0.6);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1055;
+            flex-direction: column;
+        }
+
+        .tick-box {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background: white;
+            padding: 2rem;
+            border-radius: 1rem;
+            box-shadow: 0 0 20px rgba(0,0,0,0.2);
+            animation: pop-in 0.4s ease-out;
+        }
+
+        .tick-svg {
+            width: 100px;
+            height: 100px;
+        }
+
+        .tick-circle {
+            stroke: #28a745;
+            stroke-width: 4;
+            stroke-dasharray: 157;
+            stroke-dashoffset: 157;
+            animation: dash 0.6s forwards ease-in-out;
+        }
+
+        .tick-check {
+            stroke: #28a745;
+            stroke-width: 4;
+            stroke-dasharray: 48;
+            stroke-dashoffset: 48;
+            animation: draw 0.4s 0.6s forwards ease-in-out;
+        }
+
+        .tick-box.tick-error .tick-circle,
+        .tick-check.error {
+            stroke: #dc3545;
+        }
+
+        .tick-box.tick-error .tick-circle {
+            stroke-dasharray: 157;
+            stroke-dashoffset: 157;
+            animation: dash 0.6s forwards ease-in-out;
+        }
+
+        .tick-box.tick-error .tick-check {
+            stroke-dasharray: 60;
+            stroke-dashoffset: 60;
+            animation: drawX 0.4s 0.6s forwards ease-in-out;
+        }
+
+        .tick-message {
+            margin-top: 1rem;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        @keyframes dash {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes drawX {
+            to {
+                stroke-dashoffset: 0;
+            }
+        }
+
+        @keyframes pop-in {
+            from {
+                transform: scale(0);
+                opacity: 0;
+            }
+            to {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+        @media (max-width: 768px) {
+    body {
+        background-position: center;
+    }
+
+    .card {
+        padding: 1.5rem !important;
+    }
+
+    .tick-box {
+        padding: 1.2rem;
+        max-width: 90%;
+    }
+
+    .tick-svg {
+        width: 80px;
+        height: 80px;
+    }
+
+    .tick-message {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .navbar-brand img {
+        height: 32px !important;
+    }
+
+    h2.text-center {
+        font-size: 1.5rem;
+    }
+
+    .form-label {
+        font-size: 0.9rem;
+    }
+
+    .form-control {
+        font-size: 0.95rem;
+    }
+
+    .btn {
+        font-size: 1rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .d-grid {
+        gap: 0.8rem;
+    }
+}
+.tick-svg {
+    stroke-dasharray: 1000;
+    stroke-dashoffset: 1000;
+    animation: draw 1s ease-out forwards;
+}
+@keyframes draw {
+    to {
+        stroke-dashoffset: 0;
+    }
+}
+
